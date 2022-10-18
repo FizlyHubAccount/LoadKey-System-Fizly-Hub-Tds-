@@ -1,0 +1,141 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Fizly Hub Key System (tds) ", HidePremium = false,IntroText = "Fizly Hub Key System(tds) ", SaveConfig = true, ConfigFolder = "Fizly hub Key System(tds)"})
+--loading 
+if game.PlaceId == 3260590327 then
+  OrionLib:MakeNotification({
+    Name = "Correct",
+    Content = "You are in correct game ",
+        Image = "rbxassetid://4483345998",
+    Time = 5
+  })
+  
+
+
+           OrionLib:MakeNotification({
+	Name = "Logged in!",
+	Content = "You are logged in as "..Player.Name.."!",
+    	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+--version keys
+_G.Key = "5368566D59713374"
+_G.KeyInput = "3F4528482B4D6250"
+
+--Main function
+
+function LoadAutoStrat()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/FizlyHubAccount/test/main/test", true))() 
+  
+end
+--function
+function Destroy()
+  OrionLib:Destroy()
+
+end
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+  Name = "Correct Key!",
+  Content = "You have entered the correct key! Please wait.",
+  Image = "rbxassetid://4483345998",
+  Time = 5
+    })
+end
+
+
+ 
+
+
+
+function InCorrectKeyNotification()
+    OrionLib:MakeNotification({
+  Name = "InCorrect Key!",
+  Content = "You have entered the Incorrect key!",
+  Image = "rbxassetid://4483345998",
+  Time = 7
+    })
+end
+
+function GetKeyNotifiation()
+    OrionLib:MakeNotification({
+  Name = "Get Key Link!",
+  Content = "Get Key on Discord: soon",
+  Image = "rbxassetid://4483345998",
+  Time = 7
+    })
+end
+
+function HowToGetKeyNotifiation()
+    OrionLib:MakeNotification({
+  Name = "Here how you can key",
+  Content = "Get Key on Discord: ",
+  Image = "rbxassetid://4483345998",
+  Time = 7
+    })
+end
+--tab and more
+local Tab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TabGet = Window:MakeTab({
+	Name = "Get Key Here",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter Key ",
+	Default = "",
+    TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end    
+})
+
+TabGet:AddButton({
+	Name = "Get link to key",
+	Callback = function()
+		HowToGetKeyNotifiation()
+
+	end
+		
+		})
+		
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+        if _G.KeyInput == _G.Key then
+			CorrectKeyNotification()
+           wait(4)
+          Destroy()
+          wait(1)
+         LoadAutoStrat()
+			
+
+
+		
+
+           
+        else
+
+            InCorrectKeyNotification()
+        end
+      		
+  	end    
+})
+
+  else
+  OrionLib:MakeNotification({
+  Name = "Error",
+  Content = "The game is incorrect. Please Join To Correct Game.",
+  Image = "rbxassetid://4483345998",
+  Time = 7
+  
+ 
+  })
+end
